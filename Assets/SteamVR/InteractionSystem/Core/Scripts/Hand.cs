@@ -341,13 +341,14 @@ namespace Valve.VR.InteractionSystem
                     p * initialObjectScale.z); // calculate new object scale with p
 
                 attachedObject.transform.rotation = handRot * initialObjectRotation; // add rotation
-                attachedObject.transform.localScale = newScale; // set new scale
+                if (newScale.x >= 0.5f && newScale.x <= 1.5f)  // Ограничение скейла
+                    attachedObject.transform.localScale = newScale; // set new scale
+                else attachedObject.transform.localScale = attachedObject.transform.localScale;
                 // set the position of the object to the center of both hands based on the original object direction relative to the new scale and rotation
                 attachedObject.transform.position = (0.5f * (currentHandPosition1 + currentHandPosition2)) +
                                                     (handRot * (initialObjectDirection * p));
             }
         }
-
 
         public AttachedObject getAttachedObjectInfo(GameObject obj)
         {
@@ -448,12 +449,11 @@ namespace Valve.VR.InteractionSystem
                 initialHandPosition1 = trackedObject.transform.position;
                 initialHandPosition2 = otherHand.trackedObject.transform.position;
                 initialObjectRotation = objectToAttach.transform.rotation;
-                
                 initialObjectScale = objectToAttach.transform.localScale;
                 initialAttachmentFlags = attachedObject.attachmentFlags;
                 initialObjectDirection = objectToAttach.transform.position -
                                          (initialHandPosition1 + initialHandPosition2) * 0.5f;
-
+                
                 otherHand.currentAttachedObject.transform.parent =
                     null; // unset parent (the first hand), so it's moving freely
                 AttachedObject
