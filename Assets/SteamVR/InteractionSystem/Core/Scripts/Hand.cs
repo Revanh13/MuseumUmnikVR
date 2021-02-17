@@ -448,6 +448,7 @@ namespace Valve.VR.InteractionSystem
                 initialHandPosition1 = trackedObject.transform.position;
                 initialHandPosition2 = otherHand.trackedObject.transform.position;
                 initialObjectRotation = objectToAttach.transform.rotation;
+                
                 initialObjectScale = objectToAttach.transform.localScale;
                 initialAttachmentFlags = attachedObject.attachmentFlags;
                 initialObjectDirection = objectToAttach.transform.position -
