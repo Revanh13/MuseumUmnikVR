@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 
 public class ObjectRestorer : MonoBehaviour
@@ -14,7 +12,7 @@ public class ObjectRestorer : MonoBehaviour
     private bool restore = false;
     private bool restoreCoroutine = false;
 
-    public int countPickUp = 0;
+    private int countPickUp = 0;
     
     void Start()
     {
@@ -55,32 +53,5 @@ public class ObjectRestorer : MonoBehaviour
         yield return new WaitForSeconds(1f);
         restore = false;
         restoreCoroutine = false;
-        print("AAAAAAAAAAAAAAAA");
     }
-
-    // private void OnCollisionExit(Collision other)
-    // {
-    //     if (other.collider.gameObject.CompareTag("Player"))
-    //     {
-    //         restore = true;
-    //     }
-    // }
-
-    // private void OnTriggerEnter(Collider other)
-    // {
-    //     if (other.CompareTag("Player")) countPickUp++;
-    //
-    // }
-    //
-    // private void OnTriggerExit(Collider other)
-    // {
-    //     if (other.CompareTag("Player"))
-    //     {
-    //         countPickUp--;
-    //         if (countPickUp == 0)
-    //         {
-    //             restore = true;
-    //         }
-    //     }
-    // }
 }

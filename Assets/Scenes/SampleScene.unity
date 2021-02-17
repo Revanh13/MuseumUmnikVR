@@ -1461,8 +1461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc43fc7de514164aa8f835af111274b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  countPickUp: 0
+  speed: 3
 --- !u!65 &1923544204
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1488,6 +1487,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5282255088910529274}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1982901573 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7626668176331416899, guid: e42cf5abcebec1f49b893217c1375467,
+    type: 3}
+  m_PrefabInstance: {fileID: 1529518223}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1982901574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982901573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b10c455dad18254fbc0bc35b45f8b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 1502807943}
 --- !u!1001 &5282255088910529274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1495,6 +1513,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5281260943617676920, guid: aee23616d7095eb4985d70a8de1ad227,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5282255088592164375, guid: aee23616d7095eb4985d70a8de1ad227,
         type: 3}
       propertyPath: m_RootOrder
